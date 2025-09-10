@@ -1,0 +1,84 @@
+.model-toggle {
+  display: flex;
+  gap: 12px;
+  justify-content: center;
+  margin: 0;
+}
+
+.model-toggle button {
+  padding: 12px 24px;
+  width: fit-content;
+  border: none;
+  border-radius: 8px;
+  background-color: var(--chip-bg);
+  color: var(--text-primary);
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+  font-weight: 500;
+  font-size: 0.95rem;
+  box-shadow: var(--shadow);
+  border: 1px solid var(--border-color);
+  position: relative;
+  overflow: hidden;
+}
+
+.model-toggle button::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: -100%;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(90deg, transparent, rgba(255, 255, 255, 0.2), transparent);
+  transition: left 0.6s ease;
+}
+
+.model-toggle button:hover::before {
+  left: 100%;
+}
+
+.model-toggle button.active {
+  background-color: #0a6789;
+  color: white;
+  box-shadow: 0 4px 8px rgba(10, 103, 137, 0.3);
+  transform: translateY(-2px);
+}
+
+.model-toggle button:hover {
+  background-color: var(--border-color);
+  transform: translateY(-2px);
+  box-shadow: var(--shadow-hover);
+}
+
+.model-toggle button.active:hover {
+  background-color: #085a78;
+}
+
+/* Efecto de transición entre botones */
+.model-toggle button {
+  transition: all 0.5s cubic-bezier(0.25, 0.46, 0.45, 0.94);
+}
+
+/* Estado activo para el botón interactivo */
+.model-toggle button.active:nth-of-type(3) {
+  background-color: #ff9800; /* Un tono naranja llamativo */
+  color: white;
+  box-shadow: 0 4px 8px rgba(255, 152, 0, 0.3);
+}
+
+.model-toggle button.active:nth-of-type(3):hover {
+  background-color: #e68900;
+}
+
+
+/* Responsive */
+@media (max-width: 550px) {
+  .model-toggle {
+    align-items: center;
+  }
+
+  .model-toggle button {
+    width: fit-content;
+    max-width: fit-content;
+  }
+}

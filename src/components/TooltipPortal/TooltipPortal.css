@@ -1,0 +1,26 @@
+.tooltip-portal {
+  position: fixed;
+  background-color: #222;
+  color: #fff;
+  padding: 8px 12px;
+  border-radius: 8px;
+  font-size: 14px;
+  white-space: normal;
+  word-wrap: break-word;
+  max-width: 250px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
+  z-index: 9999; /* siempre encima */
+  pointer-events: none;
+  transition: opacity 0.15s ease-in-out;
+}
+
+.tooltip-portal::before {
+  content: "";
+  position: absolute;
+  bottom: -6px;
+  left: 50%;
+  transform: translateX(-50%);
+  border-width: 6px;
+  border-style: solid;
+  border-color: var(--tooltip-bg, #222) transparent transparent transparent;
+}
