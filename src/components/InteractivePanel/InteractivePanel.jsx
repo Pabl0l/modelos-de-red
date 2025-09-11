@@ -167,7 +167,7 @@ const generarDatosEncapsulados = (mensajeOriginal, nivelCapa) => {
       {/* Información de la capa */}
       <div className="bento-item-int layer-info">
         <h3>Descripción</h3>
-        <p>{capaActualData.descripcion}</p>
+        <p>{capaActualData.info}</p>
       </div>
 
       {/* Botones de navegación */}

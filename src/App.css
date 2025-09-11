@@ -81,6 +81,7 @@ h2{
   justify-content: space-between;
   align-items: center;
   gap: 1rem;
+  flex-wrap: wrap; /* Permite que los elementos se ajusten en móviles */
 }
 
 .theme-toggle {
@@ -96,6 +97,7 @@ h2{
     background-color 0.5s ease,
     box-shadow 0.5s ease,
     transform 0.3s ease;
+  flex-shrink: 0;
 }
 
 .theme-toggle:hover {
@@ -161,9 +163,14 @@ footer a{
   }
 
   .controls {
-    gap: 0.5rem;
+    justify-content: center; /* Centra los elementos en móviles */
+    gap: 0.8rem;
   }
-
+.theme-toggle {
+    padding: 0.6rem;
+    font-size: 1.1rem;
+    order: 2; /* Cambia el orden para mejor disposición */
+  }
   footer {
     margin-top: 2rem;
     padding: 1rem;
@@ -175,8 +182,20 @@ footer a{
     font-size: 1.3rem;
   }
 
+  .controls {
+    flex-direction: column; /* Apila verticalmente en móviles muy pequeños */
+    align-items: stretch;
+    gap: 0.5rem;
+  }
+  
   .theme-toggle {
+    align-self: center; /* Centra el botón dentro del contenedor */
+    margin-top: 0.5rem;
     padding: 0.5rem;
     font-size: 1rem;
+  }
+  
+  .model-toggle {
+    order: 1; /* El selector de modelo va primero */
   }
 }
